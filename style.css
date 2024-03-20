@@ -6,121 +6,161 @@
 
 :root {
   --text: #e1e1e6;
+  font-family: "Roboto", sans-serif;
 }
-
 
 nav {
-  width: 40vw;
+  width: 100vw;
+  padding: 3vw 0;
   position: absolute;
-  cursor:default;
-  
+
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 4rem;
   align-items: center;
+  justify-content: space-evenly;
 }
 
-nav img{
-  width: 80px;
-  padding-left: 20px;
-}
-
-nav a{
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: var(--text);
+nav a {
+  font-size: 1.3rem;
   text-decoration: none;
 }
 
-
-h1,
-button {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: var(--text);
-}
-
-p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: var(--text);
-}
-
-.bold{
+nav a:hover {
+  transform: scale(1.1);
   font-weight: 800;
 }
 
+p,
+h1,
+nav a,
+button {
+  color: var(--text);
+}
+
+h1,
+button {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 800;
+  transform: scale(1.1);
+}
+
 /*home*/
+#home,
+#home main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home main h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
 #home main button {
   cursor: pointer;
   width: 15rem;
   height: 3.5rem;
-  margin-top: 2rem;
-  
-    
+  margin: 2rem;
+
   font-size: 1rem;
-  text-transform: uppercase; 
-  
-  border-radius: 5px; 
-  background-color: transparent; 
-  border: 1px white solid; 
+  text-transform: uppercase;
+
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px white solid;
 }
 
-#home main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/*universe*/
- #page-universe,
- #page-exploration{
+/*universe and exploration*/
+#page-universe,
+#page-exploration {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
 
-  padding: 0 32rem 0 8rem;
- }
+#page-universe article,
+#page-exploration article {
+  padding: 3rem;
+  text-align: center;
+}
 
- #page-universe h1,
- #page-exploration h1{
-  font-size: 4rem;
-  line-height: 10rem;
- }
+#page-universe h1,
+#page-exploration h1 {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
 
- #page-universe p,
- #page-exploration p{
+#page-universe p,
+#page-exploration p {
   font-size: 1.2rem;
-  line-height: 2rem;
- }
-
+}
 
 /*backgrounds*/
 #home,
 #page-exploration,
 #page-universe {
   height: 100vh;
+  pointer-events: none;
 }
 
 #home {
   background-image: url(/assets/wp-home.png);
   background-position: bottom;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.6rem;
 }
 
 #page-universe {
-  pointer-events: none;
   background: url(/assets/wp-universe.png);
   background-position: bottom;
 }
 
 #page-exploration {
-  pointer-events: none;
   background: url(/assets/wp-exploration.png);
   background-position: bottom;
+}
+
+/*medias queries*/
+@media (min-width: 800px) {
+  nav {
+    width: 40rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  #page-universe article,
+  #page-exploration article {
+    padding: 3rem 3rem 5rem 3rem;
+    text-align: left;
+    max-width: 50rem;
+  }
+}
+
+@media (max-width: 400px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  #home main h1 {
+    font-size: 3rem;
+  }
+
+  #page-universe article,
+  #page-exploration article {
+    padding: 1rem;
+  }
+
+  #page-universe article p,
+  #page-exploration article p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
