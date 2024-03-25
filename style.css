@@ -10,8 +10,14 @@
 }
 
 nav {
-  width: 100vw;
-  padding: 3vw 0;
+  padding: 3vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between
+}
+
+
+nav {
   position: absolute;
 
   display: flex;
@@ -22,10 +28,11 @@ nav {
 nav a {
   font-size: 1.3rem;
   text-decoration: none;
+  transition: 0.3s;
+  transform: scale(1.1);
 }
 
 nav a:hover {
-  transform: scale(1.1);
   font-weight: 800;
 }
 
@@ -52,19 +59,19 @@ p {
 
 /*home*/
 #home,
-#home main {
+#home article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#home main h1 {
+#home article h1 {
   font-size: 4rem;
   text-align: center;
 }
 
-#home main button {
+#home article button {
   cursor: pointer;
   width: 15rem;
   height: 3.5rem;
@@ -76,6 +83,12 @@ p {
   border-radius: 5px;
   background-color: transparent;
   border: 1px white solid;
+  transition-duration: 1s;
+}
+
+#home article button:hover {
+  background-color: #40626b;
+  border: #40626b;
 }
 
 /*universe and exploration*/
@@ -84,11 +97,11 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #page-universe article,
 #page-exploration article {
-  padding: 3rem;
   text-align: center;
 }
 
@@ -108,7 +121,7 @@ p {
 #page-exploration,
 #page-universe {
   height: 100vh;
-  pointer-events: none;
+  padding: 4vh;
 }
 
 #home {
@@ -128,9 +141,9 @@ p {
 
 /*medias queries*/
 @media (min-width: 800px) {
-  nav {
-    width: 40rem;
-  }
+nav{
+  width: clamp(400px, 70%, 800px);
+}
 
   nav a {
     font-size: 1.5rem;
@@ -138,10 +151,15 @@ p {
 
   #page-universe article,
   #page-exploration article {
-    padding: 3rem 3rem 5rem 3rem;
-    text-align: left;
-    max-width: 50rem;
+    max-width: 80rem;
   }
+
+  #home,
+#page-exploration,
+#page-universe {
+  padding: 8vh;
+}
+
 }
 
 @media (max-width: 400px) {
@@ -149,7 +167,7 @@ p {
     font-size: 1rem;
   }
 
-  #home main h1 {
+  #home article h1 {
     font-size: 3rem;
   }
 
@@ -163,4 +181,11 @@ p {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
+  #home,
+#page-exploration,
+#page-universe {
+  height: 100vh;
+  padding: 2vh;
+}
 }
